@@ -1,0 +1,74 @@
+DeepFragLib: Fragment Library Construction Software by Deep Neural Network for Ab Initio Protein Structure Prediction
+*********************************************************************************************************************
+
+Current Version: 1.0
+By Tong Wang ----- March 2019
+
+
+DEPENDENCIES
+************
+DeepFragLib could be run with Python2.7 or Python3. 
+
+Some packages should be installed with the specific version:
+1. Tensorflow-gpu v1.8.0
+2. Numpy v1.15.4
+
+The local version of DeepFragLib does not require any other software to be executed.
+
+However, DeepFragLib requires 4 input files:
+
+1. TARGET.fasta: The fasta sequence of the target protein.
+
+2. TARGET.ss: The 3-class predicted secondary structure by PSIPRED v4.01. 
+Users could get the file by PSIPRED online server at http://bioinf.cs.ucl.ac.uk/psipred_new/ and need to remove the first two heading lines. 
+Alternatively, a local version of PSIPRED could be downloaded at http://bioinfadmin.cs.ucl.ac.uk/downloads/psipred/. 
+Please rename the file as TARGET.ss 
+
+3. TARGET.spd3: The predicted torsion angles by SPOT1D. 
+Users could get the file by SPOT1D online server at http://sparks-lab.org/jack/server/SPOT-1D/ and reformat the file by "scripts/reformat_spot1d_server.py". 
+Alternatively, a local version of SPOT1D could be downloaded at http://sparks-lab.org/jack/download/ index.php?Download=SPOT1D_local.tgz and reformat the file by "scripts/reformat_spot1d_local.py".
+
+
+4. TARGET.mat: The predicted residues contact map by SPOT-Contact. 
+Users could get the file by SPOT-Contact online server at http://sparks-lab.org/jack/server/SPOT-Contact/ and reformat the file by "scripts/reformat_spot2d_server.py". 
+Alternatively, a local version of SPOT-Contact could be downloaded at http://sparks-lab.org/jack/download/index.php?Download=SPOT-Contact_local.tgz and reformat the file by "scripts/reformat_spot2d_local.py".
+
+In addition, if users want to calculate RMSD for template fragment, a PDB file only containing C-alpha coordinates of the target protein should be provided.
+
+Users should put all input files in the directory "examples/inputs/" and ensure that these files have the same formats of the corresponding example files we provided.
+
+
+EXAMPLE USAGE
+*************
+
+An example is in "data/example". To generate the fragment library, type the command as follows:
+
+$ python main.py example
+
+After a period of time, two result files will be generated: example.lib recording detailed information during computation and example.frag recording dihedral angles and coordinates with the same format of the output file by NNMake in Rosetta.
+
+
+CONFIGURATION
+*************
+
+Users could change parameters, such as the input file directory, the output file directory, the choice of exclusion of homologous proteins and the choice of RMSD calcualtion in "main.py".
+
+In addition, users could choose to use either GPU or CPU to run the software by modifying "gpu_id" in "main.py". Notably, using GPU can greatly accelerate the computational speed since the deep neural networks are sophisticated.
+
+
+OTHER INFORMATION
+*****************
+
+Users could use our web server at http://structpred.life.tsinghua.edu.cn/DeepFragLib.html as an alternative choice.
+
+REFERENCES
+**********
+1, Tong Wang#, Yanhua Qiao, Wenze Ding, Wenzhi Mao, Yaoqi Zhou* and Haipeng Gong*,“Improving fragment sampling by deep neural networks for ab initio protein structure prediction”, Submitted.
+
+2, Tong Wang#, Yuedong Yang, Yaoqi Zhou, and Haipeng Gong*, “LRFragLib: an effective algorithm to identify fragments for de novo protein structure prediction”, Bioinformatics, 33(5): 677-683, 2017.
+
+
+TROUBLESHOOTING
+***************
+
+Please contact t-wan14@mails.tsinghua.edu.cn for any problems users may encounter using DeepFragLib.  
