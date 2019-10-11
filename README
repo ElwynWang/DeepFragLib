@@ -63,7 +63,7 @@ Users could use our web server at http://structpred.life.tsinghua.edu.cn/DeepFra
 
 REFERENCES
 **********
-1, Tong Wang#, Yanhua Qiao, Wenze Ding, Wenzhi Mao, Yaoqi Zhou* and Haipeng Gong*,“Improving fragment sampling by deep neural networks for ab initio protein structure prediction”, Submitted.
+1, Tong Wang#, Yanhua Qiao, Wenze Ding, Wenzhi Mao, Yaoqi Zhou* and Haipeng Gong*,“Improving fragment sampling for ab initio protein structure prediction using deep neural networks ”, Nature Machine Intelligence, 1: 347-355, 2019.
 
 2, Tong Wang#, Yuedong Yang, Yaoqi Zhou, and Haipeng Gong*, “LRFragLib: an effective algorithm to identify fragments for de novo protein structure prediction”, Bioinformatics, 33(5): 677-683, 2017.
 
